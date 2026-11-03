@@ -32,10 +32,12 @@ To prevent spam, individual email addresses are often configured for different c
    - If Thunderbird finds no matching identity, the `TO` address is automatically assigned as the sender (`FROM`).
    - Optionally inherits the configured display name of the default identity (e.g., `John Doe <partner-alias@mydomain.com>`).
 
-2. **Visual Signaling**:
+2. **Visual Signaling & Popup Controls**:
    - **Toolbar Badge**: Displays a green `AUTO` badge on the add-on icon in the compose window.
    - **Tooltip / Infobar**: Displays the assigned sender address.
-   - **Status Popup**: Clicking the toolbar icon opens a detailed popup showing the original `TO` address, assigned `FROM` address, and account name.
+   - **Status Popup**: Clicking the toolbar icon opens a detailed popup showing the original `TO` address, assigned `FROM` address, original Thunderbird sender, and account name.
+   - **Undo Function ("Undo")**: When automatic sender assignment is active, clicking the "Undo" button restores Thunderbird's original sender address and changes the status to standard identity.
+   - **Manual Override ("Override")**: When using the standard identity, clicking the "Override" button re-applies the automatic sender assignment according to add-on rules.
    - **System / Desktop Notification**: Can optionally be enabled in settings.
 
 3. **Per-Account Control**:
