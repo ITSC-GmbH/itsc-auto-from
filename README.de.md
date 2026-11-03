@@ -26,10 +26,12 @@ Zur Spam-Prävention werden häufig individuelle E-Mail-Adressen für unterschie
    - Findet Thunderbird keine passende Identität, wird die `TO`-Adresse automatisch als Absender (`FROM`) gesetzt.
    - Optional wird der konfigurierte Anzeigename der Standardidentität übernommen (z. B. `Max Mustermann <partner-alias@meinedomain.de>`).
 
-2. **Visuelle Signalisierung**:
+2. **Visuelle Signalisierung & Popup-Steuerung**:
    - **Symbolleisten-Badge**: Im Verfassen-Fenster wird auf dem Add-on-Symbol eine grüne `AUTO`-Markierung angezeigt.
    - **Tooltip / Infoleiste**: Zeigt die zugewiesene Absenderadresse an.
-   - **Status-Popup**: Klick auf das Symbol öffnet ein Detail-Popup mit ursprünglicher `TO`-Adresse, gesetzter `FROM`-Adresse und Kontoname.
+   - **Status-Popup**: Klick auf das Symbol öffnet ein Detail-Popup mit ursprünglicher `TO`-Adresse, gesetzter `FROM`-Adresse, ursprünglichem Thunderbird-Absender und Kontoname.
+   - **Rückgängig-Funktion ("Rückgängig")**: Im Status "Automatische Absenderzuordnung aktiv" kann die vorgenommene Absenderersetzung per Klick auf die Schaltfläche "Rückgängig" verworfen werden; Thunderbird setzt daraufhin wieder die ursprünglich gewählte FROM-Angabe ein und der Status wechselt zu "Standard-Identität".
+   - **Erneutes Überschreiben ("Überschreiben")**: Im Status "Standard-Identität" lässt sich die Absenderadresse über die Schaltfläche "Überschreiben" jederzeit nach den vorhandenen Regeln des Add-ons erneut überschreiben.
    - **System-/Desktopbenachrichtigung**: Kann in den Einstellungen optional aktiviert werden.
 
 3. **Konto-spezifische Steuerung**:
