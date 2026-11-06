@@ -1,0 +1,100 @@
+name: Bug Report
+description: Report a defect or unexpected behavior
+title: "[Bug]: "
+labels:
+  - bug
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please provide all required information so the issue can be investigated efficiently.
+
+  - type: input
+    id: extension-version
+    attributes:
+      label: Extension Version
+      description: Version of the addon
+      placeholder: 1.0.0
+    validations:
+      required: true
+
+  - type: input
+    id: thunderbird-version
+    attributes:
+      label: Thunderbird Version
+      description: Version of your thunderbird installation
+      placeholder: 159.0.0
+    validations:
+      required: true
+
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Operating System
+      description: Select all operating systems where the issue occurs
+      multiple: true
+      options:
+        - MS Windows
+        - MacOS
+        - Linux
+    validations:
+      required: true
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: Short description of the problem
+      placeholder: Describe the issue
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps-to-reproduce
+    attributes:
+      label: Steps to Reproduce
+      description: Explain how the issue can be reproduced
+      placeholder: |
+        1. Open ...
+        2. Click ...
+        3. Observe ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: Expected Behavior
+      description: What should happen?
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual-behavior
+    attributes:
+      label: Actual Behavior
+      description: What actually happened?
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant Logs / Error Messages
+      description: Paste stack traces, console output or error messages if available
+      render: text
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots
+      description: Add screenshots if applicable
+
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: Confirmation
+      options:
+        - label: I searched for existing issues before creating this report.
+          required: true
