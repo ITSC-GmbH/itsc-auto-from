@@ -1,0 +1,37 @@
+name: Feature Request
+description: Suggest an improvement or new functionality
+title: "[Feature]: "
+labels:
+  - enhancement
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please provide sufficient details so the request can be evaluated.
+
+  - type: input
+    id: extension-version
+    attributes:
+      label: Extension Version
+      description: Version to enhance
+      placeholder: 1.0.0
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Describe your proposal
+      description: Improvement or new functionality to be added
+      placeholder: Describe your proposal
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: Confirmation
+      options:
+        - label: I searched for existing feature requests before creating this request.
+          required: true
