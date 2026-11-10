@@ -142,13 +142,33 @@ npm test
 
 ## Syntax & Linter Check
 ```bash
+# Runs both JavaScript syntax check and XPI validation with webext-linter
 npm run lint
+
+# Alternatively run only JavaScript syntax check
+npm run lint:js
+
+# Alternatively run only XPI validation with webext-linter
+npm run lint:xpi
+```
+
+## Cleaning Build Artifacts
+```bash
+npm run clean
 ```
 
 ## Building Release Packages
+
+> [!note]
+>
+> *The add-on's version number is maintained solely in `package.json` and is incorporated into the manifest during the build process.*
+
 ```bash
 # Builds both the installable XPI and the source ZIP
 npm run build
+
+# Alternatively build only the unpacked add-on directory
+npm run build:unpacked
 
 # Alternatively build only the XPI package
 npm run build:xpi
@@ -157,8 +177,9 @@ npm run build:xpi
 npm run build:source
 ```
 The generated release artifacts are stored in the `dist/` directory:
-- `dist/itsc-auto-from.xpi` (Installable Thunderbird add-on)
-- `dist/itsc-auto-from-source.zip` (Full source code for submission / archiving)
+- `dist/itsc-auto-from/` (Unpacked extension for development and testing)
+- `dist/itsc-auto-from-<version>.xpi` (Installable Thunderbird add-on)
+- `dist/itsc-auto-from-<version>-source.zip` (Full source code for submission / archiving)
 
 # Installation in Mozilla Thunderbird
 
@@ -166,8 +187,8 @@ The generated release artifacts are stored in the `dist/` directory:
 2. Open Thunderbird.
 3. Open the menu **Tools** (or hamburger menu) -> **Add-ons and Themes**.
 4. Click the gear icon (top right) and select **Install Add-on From File...**.
-5. Select the `dist/itsc-auto-from.xpi` file and confirm the installation.
-6. For temporary development: Load the directory as a temporary add-on under **Tools** -> **Developer Tools** -> **Debug Add-ons**.
+5. Select the `dist/itsc-auto-from-<version>.xpi` file and confirm the installation.
+6. For temporary development: Load the directory `dist/itsc-auto-from` as a temporary add-on under **Tools** -> **Developer Tools** -> **Debug Add-ons**.
 
 # Issues and Feature Requests
 
