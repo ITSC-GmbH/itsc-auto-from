@@ -136,13 +136,33 @@ npm test
 
 ## Syntax- und Linter-Prüfung
 ```bash
+# Führt sowohl die JavaScript-Syntaxprüfung als auch die XPI-Validierung mit webext-linter aus
 npm run lint
+
+# Alternativ nur die JavaScript-Syntaxprüfung
+npm run lint:js
+
+# Alternativ nur die XPI-Prüfung mit webext-linter
+npm run lint:xpi
+```
+
+## Bereinigung der Build-Artefakte
+```bash
+npm run clean
 ```
 
 ## Release-Pakete erstellen
+
+> [!note]
+>
+> *Die Versionsnummer des Addons wird nur in package.json gepflegt und beim Bauen ins Manifest übernommen.*
+
 ```bash
 # Erstellt sowohl das installierbare XPI als auch das Quellcode-ZIP
 npm run build
+
+# Alternativ nur das Add-on in ausgepackter Form erstellen
+npm run build:unpacked
 
 # Alternativ nur das XPI-Paket erstellen
 npm run build:xpi
@@ -151,8 +171,9 @@ npm run build:xpi
 npm run build:source
 ```
 Die generierten Release-Artefakte befinden sich im Verzeichnis `dist/`:
-- `dist/itsc-auto-from.xpi` (Installierbares Thunderbird-Add-on)
-- `dist/itsc-auto-from-source.zip` (Vollständiger Quellcode zur Einreichung / Archivierung)
+- `dist/itsc-auto-from/` (Ausgepackte Erweiterung für Entwicklung und Tests)
+- `dist/itsc-auto-from-<version>.xpi` (Installierbares Thunderbird-Add-on)
+- `dist/itsc-auto-from-<version>-source.zip` (Vollständiger Quellcode zur Einreichung / Archivierung)
 
 # Installation in Mozilla Thunderbird
 
@@ -160,8 +181,8 @@ Die generierten Release-Artefakte befinden sich im Verzeichnis `dist/`:
 2. Öffne Thunderbird.
 3. Öffne das Menü **Extras** (bzw. Hamburger-Menü) -> **Add-ons und Themes**.
 4. Klicke auf das Zahnrad-Symbol (oben rechts) und wähle **Add-on aus Datei installieren...**.
-5. Wähle die Datei `dist/itsc-auto-from.xpi` aus und bestätige die Installation.
-6. Zur temporären Entwicklung: Unter **Extras** -> **Entwickler-Werkzeuge** -> **Add-on-Entwickler-Werkzeuge** kann das Verzeichnis als temporäres Add-on geladen werden.
+5. Wähle die Datei `dist/itsc-auto-from-<version>.xpi` aus und bestätige die Installation.
+6. Zur temporären Entwicklung: Unter **Extras** -> **Entwickler-Werkzeuge** -> **Add-on-Entwickler-Werkzeuge** kann das Verzeichnis `dist/itsc-auto-from` als temporäres Add-on geladen werden.
 
 # Probleme und Änderungswünsche
 
